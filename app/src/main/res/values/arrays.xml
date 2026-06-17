@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tableau des couleurs disponibles pour la palette de sélection
+         (utilisé pour créer/modifier une note, écrans 2 et 4) -->
+    <array name="palette_couleurs">
+        <item>@color/vert</item>
+        <item>@color/rouge</item>
+        <item>@color/bleu</item>
+        <item>@color/jaune</item>
+        <item>@color/orange</item>
+        <item>@color/gris</item>
+    </array>
+
+</resources>

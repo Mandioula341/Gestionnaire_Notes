@@ -1,1 +1,30 @@
  
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Nom de l'application -->
+    <string name="app_name">Gestionnaire de Notes</string>
+
+    <!-- Écran 1 : Liste vide -->
+    <string name="message_liste_vide">Aucune notes</string>
+
+    <!-- Écran 3 : Liste des notes -->
+    <string name="hint_recherche">Rechercher</string>
+    <string name="bouton_favoris">Favoris</string>
+    <string name="format_date_note">01 Juin 2026</string>
+
+    <!-- Écran 5 et 6 : Formulaire de note -->
+    <string name="hint_titre_note">Titre</string>
+    <string name="hint_contenu_note">Contenu</string>
+    <string name="bouton_creer">Créer</string>
+    <string name="bouton_modifier">Modifier</string>
+
+    <!-- Messages d'erreur / validation -->
+    <string name="erreur_note_vide">Veuillez saisir un titre et un contenu</string>
+
+    <!-- Accessibilité (content description) -->
+    <string name="description_bouton_ajout">Ajouter une nouvelle note</string>
+    <string name="description_palette_couleurs">Sélectionner une couleur</string>
+    <string name="description_icone_favori">Note favorite</string>
+
+</resources>

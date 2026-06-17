@@ -1,1 +1,47 @@
  
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Titre 1 : 45px bold -->
+    <style name="Titre1">
+        <item name="android:textSize">45sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/noir</item>
+    </style>
+
+    <!-- Titre 2 : 40px bold -->
+    <style name="Titre2">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/noir</item>
+    </style>
+
+    <!-- Titre 3 : 24px bold -->
+    <style name="Titre3">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/noir</item>
+    </style>
+
+    <!-- Titre 4 : 16px bold -->
+    <style name="Titre4">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/noir</item>
+    </style>
+
+    <!-- Text 1 : 14px normal -->
+    <style name="Text1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/noir</item>
+    </style>
+
+    <!-- Text 2 : 12px normal -->
+    <style name="Text2">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/noir</item>
+    </style>
+
+</resources>
