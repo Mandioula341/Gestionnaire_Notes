@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Contenu principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Barre recherche + bouton Favoris -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:hint="Rechercher"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:drawablePadding="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:background="@drawable/bg_search"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:singleLine="true"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnFavoris"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Favoris"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:background="@drawable/bg_btn_favoris"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:alpha="0.5"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+
+        <!-- Message liste vide -->
+        <TextView
+            android:id="@+id/tvAucuneNote"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Aucune notes"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="#828282"
+            android:visibility="gone" />
+
+        <!-- Liste des notes -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp" />
+
+    </LinearLayout>
+
+    <!-- Palette de couleurs + FAB (superposés en bas à droite) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp">
+
+        <!-- Cercles de couleur (palette) -->
+        <LinearLayout
+            android:id="@+id/layoutPalette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/cercleVert"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle_green"
+                android:layout_marginBottom="8dp" />
+
+            <ImageView
+                android:id="@+id/cercleRouge"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle_red"
+                android:layout_marginBottom="8dp" />
+
+            <ImageView
+                android:id="@+id/cercleBleu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle_blue"
+                android:layout_marginBottom="8dp" />
+
+            <ImageView
+                android:id="@+id/cercleJaune"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle_yellow"
+                android:layout_marginBottom="8dp" />
+
+            <ImageView
+                android:id="@+id/cercleOrange"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle_orange"
+                android:layout_marginBottom="8dp" />
+
+            <ImageView
+                android:id="@+id/cercleGris"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle_grey"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+        <!-- Bouton FAB -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAjouter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_input_add"
+            android:backgroundTint="#000000"
+            app:tint="#FFFFFF"
+            xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

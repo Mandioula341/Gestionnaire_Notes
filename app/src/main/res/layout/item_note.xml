@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutNoteItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/rounded_note"
+    android:padding="16dp"
+    android:minHeight="64dp">
+
+    <!-- Titre de la note -->
+    <TextView
+        android:id="@+id/tvTitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/ivFavori"
+        android:text="Titre"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Date de la note -->
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitre"
+        android:layout_alignParentStart="true"
+        android:text="01 Juin 2026"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+    <!-- Icône favori -->
+    <ImageView
+        android:id="@+id/ivFavori"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/btn_star_big_on"
+        android:visibility="gone" />
+
+</RelativeLayout> 
