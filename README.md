@@ -26,13 +26,13 @@ Le code source se trouve dans app/src/main/java/com/example/gestionnairenotes/ :
 ## Répartition du travail
 Projet développé en équipe de 5, chacun sur sa branche :
 
-| Branche               | Domaine                                | Membre |
-|-----------------------|----------------------------------------|--------|
-| feature/database      | Base de données (model + database)     | …      |
-| feature/list-screen   | Écran liste, recherche, filtre favoris | …      |
-| feature/create-note   | Création d'une note                    | …      |
-| feature/edit-favorite | Modification et gestion des favoris    | …      |
-| feature/integration   | Intégration et assemblage              | …      |
+| Branche               | Domaine                                | Membre                     |
+|-----------------------|----------------------------------------|----------------------------|
+| feature/database      | Base de données (model + database)     | Salamba Diène              |
+| feature/list-screen   | Écran liste, recherche, filtre favoris | Amy Diaw                   |
+| feature/create-note   | Création d'une note                    | El Hadji Mamadou Thiam     |
+| feature/edit-favorite | Modification et gestion des favoris    | Fatoumata Mandioula Diallo |
+| feature/integration   | Intégration et assemblage              | Ndeye Nogaye Sy            |
 
 ## Lancer le projet
 1. Cloner le dépôt : git clone https://github.com/Mandioula341/Gestionnaire_Notes.git
