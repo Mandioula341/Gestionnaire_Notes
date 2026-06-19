@@ -81,7 +81,7 @@ res/
 
 ---
 
-## 🎨 Palette de couleurs
+##  Palette de couleurs
 
 | Couleur | Code Hex |
 |---------|----------|
@@ -118,7 +118,7 @@ git clone https://github.com/Mandioula341/Gestionnaire_Notes
 
 ---
 
-## 👥 Répartition des rôles
+## Répartition des rôles
 
 | Membre   | Rôle                                                                              |
 |----------|-----------------------------------------------------------------------------------|
@@ -130,9 +130,9 @@ git clone https://github.com/Mandioula341/Gestionnaire_Notes
 
 ---
 
-## 🏫 Contexte académique
+##  Contexte académique
 
 - **Module** : Développement Mobile
 - **Établissement** : École Supérieure Polytechnique (ESP/UCAD) — Dakar, Sénégal
-- **Année** : L2 GLSI — 2025/2026
+- **Année** : L2 GLSI-A — 2025/2026
 - **Encadrant** : Amadou NDIAYE 
