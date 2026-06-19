@@ -43,43 +43,47 @@ L'application permet à un utilisateur de gérer ses notes  directement depuis s
 - **Architecture** : Séparation model / database / adapter / activity / utils
 - **Gestion de version** : Git / GitHub
 
----
-
 ## 📁 Structure du projet
 
 ```
-application/
-└── src/main/java/com/example/gestionnairenotes/
-    ├── model/
-    │   └── Note.java               # Objet de données (titre, contenu, couleur, date, favori)
-    ├── database/
-    │   ├── DatabaseHelper.java     # Création et gestion de la base SQLite
-    │   └── NoteDAO.java            # Opérations CRUD sur les notes
-    ├── adapter/
-    │   └── NoteAdapter.java        # Affichage de la liste des notes (RecyclerView)
-    ├── activity/
-    │   ├── MainActivity.java       # Écran principal (liste, recherche, favoris)
-    │   └── NoteFormActivity.java   # Formulaire de création et modification
-    └── utils/
-        ├── DateUtils.java          # Formatage des dates (timestamp → "01 Juin 2026")
-        ├── ValidationUtils.java    # Validation des champs avant enregistrement
-        └── ColorUtils.java         # Conversion des couleurs (hex → couleur Android)
-
-res/
-├── layout/
-│   ├── activity_main.xml           # Layout écran principal
-│   ├── activity_note_form.xml      # Layout formulaire
-│   └── item_note.xml               # Layout d'un élément de la liste
-├── drawable/                       # Icônes et formes (cercles palette, étoile favori)
-└── values/
-    ├── colors.xml                  # Couleurs de l'application
-    ├── styles.xml                  # Typographie (Titre1 à Text2)
-    ├── strings.xml                 # Textes de l'interface
-    ├── dimens.xml                  # Espacements et tailles
-    └── arrays.xml                  # Tableau des couleurs de la palette
+GestionnaireNotes/
+└── app/src/main/
+    ├── java/com/example/gestionnairenotes/
+    │   ├── model/
+    │   │   └── Note.java                   # Objet de données (id, titre, contenu, couleur, date, favori)
+    │   ├── database/
+    │   │   ├── DatabaseHelper.java         # Création et gestion de la base SQLite
+    │   │   └── NoteDao.java                # Opérations CRUD (créer, lire, modifier, basculer favori)
+    │   ├── adapter/
+    │   │   └── NoteAdapter.java            # Affichage de la liste des notes (RecyclerView + gestion clics)
+    │   ├── activity/
+    │   │   ├── MainActivity.java           # Écran principal (liste, recherche, favoris, palette)
+    │   │   └── NoteFormActivity.java       # Formulaire de création et modification d'une note
+    │   └── utils/
+    │       └── ColorUtils.java             # Constantes de couleurs et application sur les vues
+    ├── res/
+    │   ├── layout/
+    │   │   ├── activity_main.xml           # Layout écran principal
+    │   │   ├── activity_note_form.xml      # Layout formulaire création/modification
+    │   │   └── item_note.xml               # Layout d'un élément de la liste
+    │   ├── drawable/
+    │   │   ├── bg_btn_favoris.xml          # Fond arrondi du bouton Favoris
+    │   │   ├── bg_note_form.xml            # Fond coloré arrondi du formulaire
+    │   │   ├── bg_search.xml               # Fond arrondi de la barre de recherche
+    │   │   ├── btn_save.xml                # Fond du bouton Créer/Modifier
+    │   │   ├── circle_blue.xml             # Cercle bleu de la palette (#2F80ED)
+    │   │   ├── circle_green.xml            # Cercle vert de la palette (#219653)
+    │   │   ├── circle_grey.xml             # Cercle gris de la palette (#828282)
+    │   │   ├── circle_orange.xml           # Cercle orange de la palette (#F2994A)
+    │   │   ├── circle_red.xml              # Cercle rouge de la palette (#EB5757)
+    │   │   ├── circle_yellow.xml           # Cercle jaune de la palette (#F2C94C)
+    │   │   └── rounded_note.xml            # Fond arrondi des cartes de notes
+    │   └── values/
+    │       ├── colors.xml                  # Couleurs de l'application (noir, blanc, vert, rouge...)
+    │       ├── strings.xml                 # Textes de l'interface (titres, messages, boutons)
+    │       └── styles.xml                  # Typographie (Titre1 à Text2) + thème AppTheme
+    └── AndroidManifest.xml                 # Déclaration des activités et permissions
 ```
-
----
 
 ##  Palette de couleurs
 
