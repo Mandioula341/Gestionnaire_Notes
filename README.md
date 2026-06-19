@@ -134,6 +134,43 @@ git clone https://github.com/Mandioula341/Gestionnaire_Notes
 
 ---
 
+## ⚠️ Notes techniques
+
+### Double clic et émulateur Android
+
+La fonctionnalité de gestion des favoris par double clic est implémentée via 
+`GestureDetector.SimpleOnGestureListener` avec la méthode `onDoubleTap()`, 
+conformément aux bonnes pratiques Android.
+
+**Comportement selon l'environnement :**
+
+| Environnement | Comportement |
+|---------------|-------------|
+| Téléphone physique | ✅ Double clic fonctionne parfaitement |
+| Émulateur Android Studio (souris) | ⚠️ Double clic non détecté (limitation connue de l'émulateur) |
+
+**Explication technique :**  
+Sur émulateur, les événements tactiles sont simulés via la souris du PC. 
+Android Studio ne transmet pas correctement les événements `ACTION_DOWN` 
+successifs nécessaires à la détection du double tap via `GestureDetector`. 
+Ce comportement est une **limitation connue de l'émulateur**, 
+et non un bug du code.
+
+**Solution de contournement sur émulateur :**  
+Sélectionner la note avec les touches directionnelles puis appuyer sur 
+Entrée deux fois rapidement.
+
+**Code implémenté :**
+```java
+new GestureDetector.SimpleOnGestureListener() {
+    @Override
+    public boolean onDoubleTap(MotionEvent e) {
+        if (listener != null) listener.onNoteDoubleClic(note);
+        return true;
+    }
+}
+```
+
 ##  Contexte académique
 
 - **Module** : Développement Mobile
