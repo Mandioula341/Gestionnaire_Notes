@@ -1,10 +1,4 @@
 package com.example.gestionnairenotes.model;
-
-/**
- * Représente une note de l'application.
- * C'est un simple objet de données : il décrit une note et ne contient
- * aucune logique de base de données (le SQL reste dans la partie database).
- */
 public class Note {
 
     private long id;

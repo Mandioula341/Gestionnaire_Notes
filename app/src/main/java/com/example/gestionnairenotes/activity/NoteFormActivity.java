@@ -18,11 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.gestionnairenotes.database.NoteDao;
 import com.example.gestionnairenotes.model.Note;
 
-/**
- * NoteFormActivity — Membre 3 Gère la création d'une note (titre, contenu,
- * couleur choisie). La couleur est reçue via l'Intent depuis MainActivity. En
- * mode modification, la note existante est pré-remplie (Membre 4).
- */
 public class NoteFormActivity extends AppCompatActivity {
 
     // Clés des extras Intent

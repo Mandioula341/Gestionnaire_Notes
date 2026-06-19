@@ -4,11 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Gère le fichier de base de données SQLite de l'application.
- * Son rôle : créer la base et la table "notes" la première fois,
- * et gérer les changements de version du schéma.
- */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Nom du fichier de base de données et version du schéma

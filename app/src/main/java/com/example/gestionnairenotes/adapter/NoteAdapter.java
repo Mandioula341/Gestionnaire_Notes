@@ -1,8 +1,11 @@
 package com.example.gestionnairenotes.adapter;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -20,7 +23,6 @@ import java.util.List;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder> {
 
-    // Interface pour les clics
     public interface OnNoteClickListener {
         void onNoteClick(Note note);
         void onNoteDoubleClic(Note note);
@@ -43,18 +45,17 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_note, parent, false);
-        return new NoteViewHolder(view);
+        return new NoteViewHolder(view, parent.getContext());
     }
 
     @Override
     public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
         Note note = notes.get(position);
 
-        // Afficher titre et date
         holder.tvTitre.setText(note.getTitre());
         holder.tvDate.setText(String.valueOf(note.getDate()));
 
-        // Appliquer la couleur de fond arrondie
+        // Couleur de fond arrondie
         GradientDrawable drawable = new GradientDrawable();
         drawable.setShape(GradientDrawable.RECTANGLE);
         drawable.setCornerRadius(24f);
@@ -65,39 +66,47 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         }
         holder.layoutNoteItem.setBackground(drawable);
 
-        // Afficher ou cacher l'icône favori
-        if (note.isFavori()) {
-            holder.ivFavori.setVisibility(View.VISIBLE);
-        } else {
-            holder.ivFavori.setVisibility(View.GONE);
-        }
+        // Icône favori
+        holder.ivFavori.setVisibility(note.isFavori() ? View.VISIBLE : View.GONE);
 
-        // Clic simple → ouvrir modification
-        holder.itemView.setOnClickListener(v -> {
-            if (listener != null) {
-                listener.onNoteClick(note);
+        // GestureDetector pour clic simple et double clic
+        GestureDetector gestureDetector = new GestureDetector(
+                holder.itemView.getContext(),
+                new GestureDetector.SimpleOnGestureListener() {
+                    @Override
+                    public boolean onSingleTapConfirmed(MotionEvent e) {
+                        if (listener != null) listener.onNoteClick(note);
+                        return true;
+                    }
+
+                    @Override
+                    public boolean onDoubleTap(MotionEvent e) {
+                        if (listener != null) listener.onNoteDoubleClic(note);
+                        return true;
+                    }
+
+                    @Override
+                    public boolean onDown(MotionEvent e) {
+                        return true;
+                    }
+                }
+        );
+
+        holder.itemView.setOnTouchListener((v, event) -> {
+            boolean result = gestureDetector.onTouchEvent(event);
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                v.performClick();
             }
+            return result;
         });
 
-        // Double clic → basculer favori
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            private int nbClics = 0;
-            private final long DELAI = 300;
+        holder.itemView.setOnClickListener(v -> {
+            // nécessaire pour que setOnTouchListener fonctionne correctement
+        });
 
-            @Override
-            public void onClick(View v) {
-                nbClics++;
-                v.postDelayed(() -> {
-                    if (nbClics == 1) {
-                        // Clic simple
-                        if (listener != null) listener.onNoteClick(note);
-                    } else if (nbClics >= 2) {
-                        // Double clic
-                        if (listener != null) listener.onNoteDoubleClic(note);
-                    }
-                    nbClics = 0;
-                }, DELAI);
-            }
+        holder.itemView.setOnTouchListener((v, event) -> {
+            gestureDetector.onTouchEvent(event);
+            return true;
         });
     }
 
@@ -106,14 +115,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         return notes.size();
     }
 
-    // ViewHolder
     static class NoteViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout layoutNoteItem;
         TextView tvTitre;
         TextView tvDate;
         ImageView ivFavori;
 
-        NoteViewHolder(@NonNull View itemView) {
+        NoteViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
             layoutNoteItem = itemView.findViewById(R.id.layoutNoteItem);
             tvTitre = itemView.findViewById(R.id.tvTitre);
@@ -121,4 +129,4 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             ivFavori = itemView.findViewById(R.id.ivFavori);
         }
     }
-} 
+}

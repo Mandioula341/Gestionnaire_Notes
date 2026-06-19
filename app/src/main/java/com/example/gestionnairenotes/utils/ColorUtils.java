@@ -18,9 +18,6 @@ public class ColorUtils {
         VERT, ROUGE, BLEU, JAUNE, ORANGE, GRIS
     };
 
-    /**
-     * Applique une couleur arrondie comme fond d'une vue
-     */
     public static void appliquerCouleurArrondie(View vue, String couleurHex) {
         GradientDrawable drawable = new GradientDrawable();
         drawable.setShape(GradientDrawable.RECTANGLE);
