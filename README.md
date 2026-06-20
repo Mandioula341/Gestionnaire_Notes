@@ -157,8 +157,7 @@ Ce comportement est une **limitation connue de l'émulateur**,
 et non un bug du code.
 
 **Solution de contournement sur émulateur :**  
-Sélectionner la note avec les touches directionnelles puis appuyer sur 
-Entrée deux fois rapidement.
+Se placer dans la barre de recherche de l'appli puis appuyer sur la touche de direction de droite puis appuyer sur la touche Entrée pour enfin afficher que les favoris et re-appuyer sur la touche Entrée pour désactiver le filtrage.
 
 **Code implémenté :**
 ```java
