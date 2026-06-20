@@ -124,13 +124,13 @@ git clone https://github.com/Mandioula341/Gestionnaire_Notes
 
 ## Répartition des rôles
 
-| Membre   | Rôle                                                                              |
-|----------|-----------------------------------------------------------------------------------|
-| Membre 1 | `model/` + `database/` (Note.java, DatabaseHelper.java, NoteDAO.java)             |
-| Membre 2 | `adapter/` + `item_note.xml` + `activity_main.xml`                                | 
-| Membre 3 | `NoteFormActivity.java` (création) + `activity_note_form.xml` + `drawable/`       |
-| Membre 4 | `NoteFormActivity.java` (modification) + logique favoris dans `MainActivity.java` |
-| Membre 5 | `utils/` + intégration + `values/` + `README.md` |
+| Membre                                | Rôle                                                                              |
+|---------------------------------------|-----------------------------------------------------------------------------------|
+| Membre 1 : Salamba Diene              | `model/` + `database/` (Note.java, DatabaseHelper.java, NoteDAO.java)             |
+| Membre 2 : Amy Diaw                   | `adapter/` + `item_note.xml` + `activity_main.xml`                                | 
+| Membre 3 : El Hadj Mamadou Thiam      | `NoteFormActivity.java` (création) + `activity_note_form.xml` + `drawable/`       |
+| Membre 4 : Fatoumata Mandioula Diallo | `NoteFormActivity.java` (modification) + logique favoris dans `MainActivity.java` |
+| Membre 5 : Ndeye Nogaye Sy            | `utils/` + intégration + `values/` + `README.md`                                  |
 
 ---
 
