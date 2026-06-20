@@ -1,6 +1,6 @@
 #  Gestionnaire de Notes
 
-Application Android de gestion de notes  développée dans le cadre du TP final de **Développement Mobile ** à l'École Supérieure Polytechnique (ESP/UCAD).
+Application Android de gestion de notes  développée dans le cadre du TP final de Développement Mobile à l'École Supérieure Polytechnique (ESP/UCAD).
 
 ---
 
