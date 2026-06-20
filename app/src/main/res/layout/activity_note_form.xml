@@ -51,6 +51,71 @@
 
     </LinearLayout>
 
+    <!-- PALETTE DE COULEURS AJOUTÉE ICI -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="#FFFFFF">
+
+        <View
+            android:id="@+id/circle_green"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/circle_green"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <View
+            android:id="@+id/circle_red"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/circle_red"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <View
+            android:id="@+id/circle_blue"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/circle_blue"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <View
+            android:id="@+id/circle_yellow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/circle_yellow"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <View
+            android:id="@+id/circle_orange"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/circle_orange"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <View
+            android:id="@+id/circle_grey"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/circle_grey"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
@@ -63,3 +128,4 @@
         android:stateListAnimator="@null" />
 
 </LinearLayout>
+

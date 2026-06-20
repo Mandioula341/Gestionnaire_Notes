@@ -34,6 +34,14 @@ public class NoteFormActivity extends AppCompatActivity {
     private LinearLayout layoutNoteCard;
     private Button btnSave;
 
+    // Vues des cercles de couleur ajoutées
+    private View circleGreen;
+    private View circleRed;
+    private View circleBlue;
+    private View circleYellow;
+    private View circleOrange;
+    private View circleGrey;
+
     // Données
     private String selectedColor = "#219653"; // couleur par défaut : vert
     private String currentMode = MODE_CREATE;
@@ -52,6 +60,14 @@ public class NoteFormActivity extends AppCompatActivity {
         editTextContent = findViewById(R.id.editTextContent);
         layoutNoteCard = findViewById(R.id.layoutNoteCard);
         btnSave = findViewById(R.id.btnSave);
+
+        // Initialiser les cercles de couleur du XML
+        circleGreen = findViewById(R.id.circle_green);
+        circleRed = findViewById(R.id.circle_red);
+        circleBlue = findViewById(R.id.circle_blue);
+        circleYellow = findViewById(R.id.circle_yellow);
+        circleOrange = findViewById(R.id.circle_orange);
+        circleGrey = findViewById(R.id.circle_grey);
 
         // Initialiser le DAO
         noteDao = new NoteDao(this);
@@ -80,6 +96,55 @@ public class NoteFormActivity extends AppCompatActivity {
             configurerModeCreation();
         }
 
+        // Configurer les écouteurs de clics pour chaque cercle de couleur
+        circleGreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = "#219653"; // Vert standard de l'application
+                appliquerCouleurFond(selectedColor);
+            }
+        });
+
+        circleRed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = "#EB5757"; // Rouge
+                appliquerCouleurFond(selectedColor);
+            }
+        });
+
+        circleBlue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = "#2F80ED"; // Bleu
+                appliquerCouleurFond(selectedColor);
+            }
+        });
+
+        circleYellow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = "#F2C94C"; // Jaune
+                appliquerCouleurFond(selectedColor);
+            }
+        });
+
+        circleOrange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = "#F2994A"; // Orange
+                appliquerCouleurFond(selectedColor);
+            }
+        });
+
+        circleGrey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = "#828282"; // Gris
+                appliquerCouleurFond(selectedColor);
+            }
+        });
+
         // Bouton Créer / Modifier
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,20 +154,16 @@ public class NoteFormActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Configure l'écran en mode création.
-     */
+    //Configure l'écran en mode création.
     private void configurerModeCreation() {
         btnSave.setText("Créer");
         editTextTitle.setHint("Titre");
         editTextContent.setHint("Contenu de la note...");
     }
 
-    /**
-     * Configure l'écran en mode modification. Pré-remplit les champs avec la
-     * note existante. (Utilisé aussi par Membre 4 — la logique de sauvegarde de
-     * modif est ici)
-     */
+    //Configure l'écran en mode modification. Pré-remplit les champs avec la
+    //note existante. (Utilisé aussi par Membre 4 — la logique de sauvegarde de
+    //modif est ici)
     private void configurerModeModification() {
         btnSave.setText("Modifier");
 
@@ -115,10 +176,8 @@ public class NoteFormActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Valide et enregistre la note dans la base de données. Empêche
-     * l'enregistrement si le titre ou le contenu est vide.
-     */
+    //Valide et enregistre la note dans la base de données. Empêche
+    //l'enregistrement si le titre ou le contenu est vide.
     private void enregistrerNote() {
         String titre = editTextTitle.getText().toString().trim();
         String contenu = editTextContent.getText().toString().trim();
@@ -166,11 +225,8 @@ public class NoteFormActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Applique dynamiquement la couleur choisie au fond de la carte note.
-     *
-     * @param couleurHex La couleur en format hexadécimal (#RRGGBB)
-     */
+    //Applique dynamiquement la couleur choisie au fond de la carte note.
+    //@param couleurHex La couleur en format hexadécimal (#RRGGBB)
     private void appliquerCouleurFond(String couleurHex) {
         try {
             int couleur = Color.parseColor(couleurHex);
@@ -185,4 +241,5 @@ public class NoteFormActivity extends AppCompatActivity {
         }
     }
 }
+
  
