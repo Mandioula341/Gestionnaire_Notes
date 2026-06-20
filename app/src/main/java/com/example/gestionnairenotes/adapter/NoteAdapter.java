@@ -53,7 +53,19 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         Note note = notes.get(position);
 
         holder.tvTitre.setText(note.getTitre());
-        holder.tvDate.setText(String.valueOf(note.getDate()));
+        //holder.tvDate.setText(String.valueOf(note.getDate()));
+        // Convertir le timestamp en texte lisible (Ex: 01 Juin 2026)
+        long timestamp = note.getDate();
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd MMM yyyy", java.util.Locale.FRANCE);
+        String dateLisible = sdf.format(new java.util.Date(timestamp));
+
+        // Si vous voulez que la première lettre du mois soit en majuscule (Ex: Juin au lieu de juin)
+        if (dateLisible.length() > 3) {
+            dateLisible = dateLisible.substring(0, 3) + dateLisible.substring(3, 4).toUpperCase() + dateLisible.substring(4);
+        }
+
+        holder.tvDate.setText(dateLisible);
+
 
         // Couleur de fond arrondie
         GradientDrawable drawable = new GradientDrawable();
